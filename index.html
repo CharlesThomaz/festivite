@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festivite - Crie seu convite</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <!-- Lado esquerdo - Apresentação -->
+            <div class="left-side">
+                <div class="logo-container">
+                    <div class="logo-icon">🎉</div>
+                    <h1 class="logo">Festivite</h1>
+                </div>
+                <p class="tagline">Crie um convite digital para o seu evento</p>
+                <div class="cake-image-container">
+                    <img src="rainbow_cake.png" alt="Bolo colorido com vela" class="cake-image">
+                </div>
+            </div>
+            
+            <!-- Lado direito - Formulário -->
+            <div class="right-side">
+                <h2 class="form-title">Crie seu convite</h2>
+                
+                <form id="invite-form">
+                    <!-- Seção: Sobre o evento -->
+                    <div class="form-section">
+                        <div class="section-title">
+                            <i class="fas fa-calendar"></i>
+                            <h3>Sobre o evento</h3>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="title" class="required">Título</label>
+                            <input type="text" id="title" name="title" placeholder="Título do evento" class="form-input">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="eventName" class="required">Nome do evento</label>
+                            <input type="text" id="eventName" name="eventName" placeholder="Nome do evento" class="form-input">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="startDate" class="required">Início</label>
+                                <input type="text" id="startDate" name="startDate" placeholder="DD/MM/AAAA" class="form-input">
+                            </div>
+                            
+                            <div class="form-group half">
+                                <label for="endDate">Fim</label>
+                                <input type="text" id="endDate" name="endDate" placeholder="DD/MM/AAAA" class="form-input">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label>Tipo</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="eventType" value="presencial" checked>
+                                        <span class="radio-custom"></span>
+                                        Presencial
+                                    </label>
+                                    
+                                    <label class="radio-label">
+                                        <input type="radio" name="eventType" value="online">
+                                        <span class="radio-custom"></span>
+                                        Online
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group half">
+                                <label for="location">Local</label>
+                                <input type="text" id="location" name="location" placeholder="Link ou endereço" class="form-input">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="description">Descrição</label>
+                            <textarea id="description" name="description" placeholder="Escreva sobre os detalhes do evento" class="form-textarea"></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Seção: Personalização -->
+                    <div class="form-section">
+                        <div class="section-title">
+                            <i class="fas fa-sliders"></i>
+                            <h3>Personalização</h3>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Cor principal</label>
+                            <div class="color-picker">
+                                <div class="color-option blue-light selected" data-color="#3498db"></div>
+                                <div class="color-option purple" data-color="#9b59b6"></div>
+                                <div class="color-option pink" data-color="#e84393"></div>
+                                <div class="color-option red" data-color="#e74c3c"></div>
+                                <div class="color-option orange" data-color="#e67e22"></div>
+                                <div class="color-option yellow" data-color="#f1c40f"></div>
+                                <div class="color-option green-light" data-color="#7bed9f"></div>
+                                <div class="color-option green" data-color="#2ecc71"></div>
+                                <div class="color-option turquoise" data-color="#1abc9c"></div>
+                                <div class="color-option blue-dark" data-color="#2980b9"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Tema do evento</label>
+                            <div class="theme-gallery">
+                                <div class="theme-option selected" data-theme="aniversario">
+                                    <div class="theme-preview">Aniversário</div>
+                                </div>
+                                <div class="theme-option" data-theme="infantil">
+                                    <div class="theme-preview">Infantil</div>
+                                </div>
+                                <div class="theme-option" data-theme="formatura">
+                                    <div class="theme-preview">Formatura</div>
+                                </div>
+                                <div class="theme-option" data-theme="casamento">
+                                    <div class="theme-preview">Casamento</div>
+                                </div>
+                                <div class="theme-option" data-theme="cha-de-bebe">
+                                    <div class="theme-preview">Chá de bebê</div>
+                                </div>
+                                <div class="theme-option" data-theme="cha-de-panela">
+                                    <div class="theme-preview">Chá de panela</div>
+                                </div>
+                                <div class="theme-option" data-theme="carnaval">
+                                    <div class="theme-preview">Carnaval</div>
+                                </div>
+                                <div class="theme-option" data-theme="pascoa">
+                                    <div class="theme-preview">Páscoa</div>
+                                </div>
+                                <div class="theme-option" data-theme="sao-joao">
+                                    <div class="theme-preview">São João</div>
+                                </div>
+                                <div class="theme-option" data-theme="halloween">
+                                    <div class="theme-preview">Halloween</div>
+                                </div>
+                                <div class="theme-option" data-theme="natal">
+                                    <div class="theme-preview">Natal</div>
+                                </div>
+                                <div class="theme-option" data-theme="outra">
+                                    <div class="theme-preview">Outra</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Estilo</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="style" value="escuro" checked>
+                                    <span class="radio-custom"></span>
+                                    Escuro
+                                </label>
+                                
+                                <label class="radio-label">
+                                    <input type="radio" name="style" value="claro">
+                                    <span class="radio-custom"></span>
+                                    Claro
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Foto de capa</label>
+                            <div class="file-upload">
+                                <label class="file-upload-button">
+                                    <input type="file" accept="image/*" class="hidden-file-input">
+                                    Selecionar
+                                </label>
+                                <span class="file-name">Nenhum arquivo selecionado</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Seção: Dados para contato -->
+                    <div class="form-section">
+                        <div class="section-title">
+                            <i class="fas fa-user"></i>
+                            <h3>Dados para contato</h3>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="name" class="required">Nome</label>
+                            <input type="text" id="name" name="name" placeholder="Nome completo" class="form-input">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="email" class="required">E-mail</label>
+                                <input type="email" id="email" name="email" placeholder="exemplo@email.com" class="form-input">
+                            </div>
+                            
+                            <div class="form-group half">
+                                <label for="phone">Telefone</label>
+                                <input type="text" id="phone" name="phone" placeholder="(99) 99999-9999" class="form-input">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Termos e condições -->
+                    <div class="form-section">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="termsAccepted">
+                            <span class="checkbox-custom"></span>
+                            <span class="checkbox-text">
+                                Li e concordo com os <a href="#" class="link">Termos e Condições</a> e com a <a href="#" class="link">Política de Privacidade</a>.
+                            </span>
+                        </label>
+                        
+                        <div class="terms-info">
+                            <p>Aceito receber atualizações e promoções por email</p>
+                            <p>Aceito receber notificações e promoções por SMS</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Botão de envio -->
+                    <div class="form-submit">
+                        <button type="submit" class="submit-button">
+                            <i class="fas fa-paper-plane"></i>
+                            Gerar convite
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

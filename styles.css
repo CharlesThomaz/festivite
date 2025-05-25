@@ -1,0 +1,498 @@
+/* Importação de fontes */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap');
+
+/* Reset e estilos base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --background: #121212;
+    --card-bg: #1a1a1a;
+    --left-side-bg: #151515;
+    --foreground: #ffffff;
+    --primary: #ff3366;
+    --secondary: #1e90ff;
+    --accent: #ff3366;
+    --muted: #333333;
+    --muted-foreground: #888888;
+    --border: #333333;
+    --input-bg: #222222;
+    --ring: #ff3366;
+    
+    /* Cores para personalização */
+    --blue-light: #3498db;
+    --purple: #9b59b6;
+    --pink: #e84393;
+    --red: #e74c3c;
+    --orange: #e67e22;
+    --yellow: #f1c40f;
+    --green-light: #7bed9f;
+    --green: #2ecc71;
+    --turquoise: #1abc9c;
+    --blue-dark: #2980b9;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--background);
+    color: var(--foreground);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    line-height: 1.5;
+}
+
+/* Container principal */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Card principal */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Lado esquerdo - Apresentação */
+.left-side {
+    background-color: var(--left-side-bg);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.logo-icon {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(to right, #3498db, #9b59b6, #e84393);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.logo {
+    font-family: 'Leckerli One', cursive;
+    color: var(--primary);
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.tagline {
+    color: var(--muted-foreground);
+    margin-bottom: 30px;
+}
+
+.cake-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.cake-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+}
+
+/* Lado direito - Formulário */
+.right-side {
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.form-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+/* Seções do formulário */
+.form-section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.section-title i {
+    color: var(--primary);
+}
+
+/* Grupos de formulário */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.half {
+    flex: 1;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.required::after {
+    content: '*';
+    color: var(--primary);
+    margin-left: 4px;
+}
+
+/* Inputs */
+.form-input {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--foreground);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-input:focus {
+    border-color: var(--ring);
+}
+
+.form-textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--foreground);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    min-height: 120px;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-textarea:focus {
+    border-color: var(--ring);
+}
+
+/* Radio buttons */
+.radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.radio-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.radio-custom {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border);
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.radio-label input:checked ~ .radio-custom {
+    border-color: var(--primary);
+}
+
+.radio-label input:checked ~ .radio-custom::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--primary);
+}
+
+/* Checkbox */
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 10px;
+}
+
+.checkbox-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkbox-custom {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+.checkbox-label input:checked ~ .checkbox-custom {
+    border-color: var(--primary);
+    background-color: var(--primary);
+}
+
+.checkbox-label input:checked ~ .checkbox-custom::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 14px;
+}
+
+.checkbox-text {
+    font-size: 14px;
+}
+
+/* Links */
+.link {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+/* Termos e informações */
+.terms-info {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--muted-foreground);
+}
+
+.terms-info p {
+    margin-bottom: 4px;
+}
+
+/* Seletor de cores */
+.color-picker {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.color-option {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s;
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+}
+
+.color-option.selected {
+    border-color: white;
+    transform: scale(1.1);
+}
+
+/* Cores específicas */
+.blue-light { background-color: var(--blue-light); }
+.purple { background-color: var(--purple); }
+.pink { background-color: var(--pink); }
+.red { background-color: var(--red); }
+.orange { background-color: var(--orange); }
+.yellow { background-color: var(--yellow); }
+.green-light { background-color: var(--green-light); }
+.green { background-color: var(--green); }
+.turquoise { background-color: var(--turquoise); }
+.blue-dark { background-color: var(--blue-dark); }
+
+/* Galeria de temas */
+.theme-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.theme-option {
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s;
+}
+
+.theme-option:hover {
+    transform: scale(1.05);
+}
+
+.theme-option.selected {
+    border-color: var(--primary);
+}
+
+.theme-preview {
+    background-color: var(--muted);
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 6px;
+    aspect-ratio: 16/9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Upload de arquivo */
+.file-upload {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.file-upload-button {
+    background-color: var(--muted);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+.file-upload-button:hover {
+    background-color: #444444;
+}
+
+.hidden-file-input {
+    display: none;
+}
+
+.file-name {
+    color: var(--muted-foreground);
+    font-size: 14px;
+}
+
+/* Botão de envio */
+.form-submit {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.submit-button {
+    background-color: var(--secondary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+.submit-button:hover {
+    background-color: #1a7ad9;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .card {
+        grid-template-columns: 1fr;
+    }
+    
+    .left-side {
+        padding: 30px;
+    }
+    
+    .cake-image {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .theme-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .right-side {
+        padding: 20px;
+    }
+    
+    .theme-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .radio-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
